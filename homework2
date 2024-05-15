@@ -1,0 +1,36 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def link list():
+    n = int(input("tedad list bde: "))
+    head = None
+    for i in range(n):
+        values = input(f"list por kon).split()
+        values = [int(x) for x in values]
+        temp = head
+        for value in values:
+            new_node = Node(value)
+            if head is None:
+                head = new_node
+            else:
+                while temp.next:
+                    temp = temp.next
+                temp.next = new_node
+    return head
+
+def sum_and_multiply(head):
+    sum_list = []
+    mul_list = []
+    while head:
+        sum_list.append(sum(node.data for node in head))
+        mul_list.append(1)
+        for node in head:
+            mul_list[-1] *= node.data
+        head = head.next
+    return sum_list, mul_list
+
+def print_results(sum_list, mul_list):
+    print("jame list", sum_list)
+    print("zarb list:", mul_list)
